@@ -1,7 +1,7 @@
 module.exports = {
     multipleStatements  : true,
-    host                : 'localhost',
-    user                : 'root',
-    password            : 'root',
-    database            : 'dbcampus'
+    host                : process.env.MYSQL_HOST,
+    user                : process.env.MYSQL_USERNAME,
+    password            : process.env.MYSQL_PASSWORD,
+    database            : process.env.MYSQL_DB,
 };
