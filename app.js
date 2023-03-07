@@ -1,5 +1,6 @@
 const env = require('./env');
 const express = require('express');
+const multer = require('multer');
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
 const app = express();
@@ -13,7 +14,8 @@ db.on('error', (error) => console.log(error));
 db.once('open', () => console.log("Database Conneted"));
 
 app.use(cors());
-const appRoute = require('./src/routes/route-jurusan');
+const appRoute = require('./src/routes/routes');
+
 app.use('/', appRoute);
 
 app.listen(process.env.PORT, () => {
